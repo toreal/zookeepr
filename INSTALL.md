@@ -1,3 +1,21 @@
+For EC2 AMI
+=============
+
+sudo yum -y install postgresql postgresql-server postgresql-devel postgresql-contrib postgresql-docs
+
+sudo service postgresql initdb
+
+# Use MD5 Authentication
+
+sudo sed -i.bak -e 's/ident$/md5/' -e 's/peer$/md5/' /var/lib/pgsql9/data/pg_hba.conf
+
+#start
+
+sudo /sbin/chkconfig --levels 235 postgresql on
+
+sudo service postgresql start
+
+
 Zookeepr Installation Instructions
 ==================================
 
